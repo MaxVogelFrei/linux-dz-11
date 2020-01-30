@@ -2,7 +2,13 @@
 Мониторинг
 
 ## Проброс порта в vagrant
+Для доступа к веб-интерфейсу перенаправляю порт 8080 на 80 порт сервера ZABBIX
+```yaml
+Vagrant.configure(2) do |config|
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080,
+    auto_correct: true
+```
 ## Установка ZABBIX
 ```bash
 yum install epel-release -y
