@@ -54,7 +54,7 @@ vi /etc/httpd/conf.d/zabbix.conf
 systemctl start httpd
 systemctl enable httpd
 ```
-### проверяю запрос данных о количестве операций чтения/записи
+### проверяю запрос данных количества операций чтения/записи
 ```bash
 zabbix_get -s 127.0.0.1 -k "vfs.dev.write[all,ops,avg1]"
 zabbix_get -s 127.0.0.1 -k "vfs.dev.read[all,ops,avg1]"
